@@ -1,0 +1,90 @@
+
+$black: #333;
+$color: blue;
+
+body{
+	background: #fbfbfb;
+	color: $black;
+	font-family: 'Open Sans', sans-serif;
+}
+
+*{
+	box-sizing: border-box;
+}
+.notlink, .notlink:focus, .notlink:visited{
+	text-decoration: none;
+    color: $black;
+}
+.notlink:hover{
+	color: $color;
+}
+.dimmed{
+	opacity: 0.5;
+}
+.smaller{
+	font-size: 0.8em;
+}
+
+
+
+.site-header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    background: #fff;
+	padding: 3em 3em;
+	box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+
+	h1{
+		margin-top: 0;
+		font-weight: 100;
+		font-size: 2.3em;
+	}
+
+	.categories-subtitle{
+		margin: 2em 0 1em 0;
+	}
+	.categories{
+		margin: 1em 0;
+	}
+}
+
+.site-main{
+	width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 3em;
+
+	.card{
+		display: inline-block;
+		vertical-align: top;
+		width: 18em;
+		color: $black;
+		border: 5px solid transparent;
+		text-decoration: none;
+		background: #fff;
+		box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+		padding: 1em 1.5em;
+		margin: 0 1em 2em 1em;
+		word-break: break-word;
+
+		h2{
+			font-weight: 100;
+			font-size: 1.7em;
+		}
+		.category{
+			margin-bottom: 0;
+		}
+		.time{
+			margin-top: 0;
+		}
+	}
+
+	.card:hover{
+		color: $color;
+		border-color: $color;
+	}
+}

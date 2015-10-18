@@ -1,0 +1,18 @@
+$background-color: #f8f5ef;
+$link-color: #172AAC;
+$link-active-color: #172AAC;
+$link-width: 2px;
+$link-offset: 0px;
+
+@mixin link($color: $link-color, $active: $link-active-color, $bg-color: $background-color, $offset: $link-offset, $width: $link-width){
+	color: $color;
+	// @include transition(color 200ms);
+	text-decoration: none;
+	position: relative;
+	text-shadow: -1px -1px 0 $bg-color, 1px -1px 0 $bg-color, -1px 1px 0 $bg-color, 1px 1px 0 $bg-color;
+	background-image: linear-gradient(to top, transparent, transparent $offset, $color $offset, $color ($offset + $width), transparent ($offset + $width));
+	&:hover, &:focus{
+		color: $active;
+		background-image: linear-gradient(to top, transparent, transparent $offset, $active $offset, $active ($offset + $width), transparent ($offset + $width));
+	}
+}
