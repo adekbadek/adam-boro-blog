@@ -1,19 +1,25 @@
 
 $black: #333;
-$color: blue;
+$color: #1DDE2F;
 
 body{
-	background: #fbfbfb;
 	color: $black;
 	font-family: 'Open Sans', sans-serif;
+}
+body:not(.single-post){
+	background: #fbfbfb;
 }
 
 *{
 	box-sizing: border-box;
 }
+
+a:not(.notlink){
+	@include link($color, $color, #fff);
+}
 .notlink, .notlink:focus, .notlink:visited{
 	text-decoration: none;
-    color: $black;
+  color: $black;
 }
 .notlink:hover{
 	color: $color;
@@ -28,19 +34,43 @@ body{
 
 
 .site-header{
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 25%;
-    height: 100%;
-    background: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 25%;
+  height: 100%;
+  background: #fff;
 	padding: 3em 3em;
 	box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
 
 	h1{
 		margin-top: 0;
 		font-weight: 100;
-		font-size: 2.3em;
+		font-size: 3em;
+	}
+
+
+	.search-form{
+		margin-top: 30px;
+		
+		.search-submit{
+			background: none;
+			outline: none;
+			border: 1px solid black;
+			padding-bottom: 2px;
+		}
+		.search-submit:hover, .search-submit:focus{
+			color: $color;
+			border-color: $color;
+		}
+		.search-field{
+			border: 1px solid #ddd;
+			padding: 2px;
+		}
+		.search-field:hover, .search-field:focus{
+			outline: none;
+			border-color: $color;
+		}
 	}
 
 	.categories-subtitle{
@@ -53,8 +83,8 @@ body{
 
 .site-main{
 	width: 75%;
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 	justify-content: center;
 	margin-top: 3em;
 
@@ -63,17 +93,17 @@ body{
 		vertical-align: top;
 		width: 18em;
 		color: $black;
-		border: 5px solid transparent;
+		border: 1px solid transparent;
 		text-decoration: none;
 		background: #fff;
 		box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
-		padding: 1em 1.5em;
-		margin: 0 1em 2em 1em;
+		padding: 0 1.5em 1em 1.5em;
+		margin: 0 1.5em 3em 1.5em;
 		word-break: break-word;
 
 		h2{
 			font-weight: 100;
-			font-size: 1.7em;
+			font-size: 2em;
 		}
 		.category{
 			margin-bottom: 0;
@@ -82,9 +112,97 @@ body{
 			margin-top: 0;
 		}
 	}
-
 	.card:hover{
 		color: $color;
 		border-color: $color;
+	}
+
+	// single
+	.single-wrapper{
+		width: 100%;
+
+		.single{
+			max-width: 40em;
+			margin: 0 auto;
+			padding: 1em;
+
+			h2, h3, h4{
+				font-weight: 100;
+			}
+
+			.single-data p{
+				margin: 0;
+			}
+			.single-data{
+				margin-bottom: 3em;
+			}
+
+			h2, h3, h4{
+				font-weight: 100;
+			}
+
+			> h2{
+				margin-top: 0;
+				font-size: 4em;
+				margin-bottom: 23px;
+			}
+
+			code{
+				margin: 1em 0;
+				display: inline-block;
+			}
+
+			.footnote a{
+				background-image: none;
+				text-shadow: none;
+			}
+			.footnotes{
+				opacity: 0.7;
+
+				.footnotereverse{
+					a{
+						background-image: none;
+						text-shadow: none;
+					}
+					a:before{
+						content: '↩';
+					}
+					img{
+						display: none !important;
+					}					
+				}
+			}
+		}
+	}
+
+
+	.posts-navigation{
+		margin-top: 110px;
+		font-size: 0.9em;
+	}
+
+
+	// search page
+	.page-header{
+		width: 100%;
+		text-align: center;
+		margin-bottom: 3em;
+
+		span{
+			color: $color;
+		}
+	}
+
+}
+
+// bigger first card - only on homepage
+.home{
+		.card:first-child{
+		width: 39em;
+
+		h2{
+			font-size: 3em;
+			margin-bottom: 27px;
+		}
 	}
 }
