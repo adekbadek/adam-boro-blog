@@ -42,11 +42,6 @@ function adam_boro_blog_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'adam-boro-blog' ),
-	) );
-
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -59,23 +54,6 @@ function adam_boro_blog_setup() {
 		'caption',
 	) );
 
-	/*
-	 * Enable support for Post Formats.
-	 * See https://developer.wordpress.org/themes/functionality/post-formats/
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside',
-		'image',
-		'video',
-		'quote',
-		'link',
-	) );
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'adam_boro_blog_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
 }
 endif; // adam_boro_blog_setup
 add_action( 'after_setup_theme', 'adam_boro_blog_setup' );
@@ -116,7 +94,7 @@ add_action( 'widgets_init', 'adam_boro_blog_widgets_init' );
 function adam_boro_blog_scripts() {
 	wp_enqueue_style( 'adam-boro-blog-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'adam-boro-blog-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'adam-boro-blog-script', get_template_directory_uri() . '/js/script.js', array(), '20151020', true );
 
 	wp_enqueue_script( 'adam-boro-blog-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 

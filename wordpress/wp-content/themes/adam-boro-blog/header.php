@@ -25,7 +25,12 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="notlink"><?php bloginfo( 'name' ); ?></a></h1>
-			<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+			<p class="site-description">
+				This site is where I keep track of the stuff I learn as a side effect of coding. If it's too <span id="bright-click-section">bright</span> <span id="bright-click" class="span-link">click here</span>.
+				<br>
+				<br>
+				I also <a href="http://adamboro.com/links/" target="_blank">collect links</a> and am <a href="mailto:adam@adamboro.com&subject=I have work for you.">available for work</a>. 
+			</p>
 		</div><!-- .site-branding -->
 
 		<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
