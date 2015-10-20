@@ -263,6 +263,7 @@ body.dark{
 		h2{
 			font-size: 3em;
 			margin-bottom: 27px;
+			margin-top: 21px;
 		}
 	}
 }
@@ -273,6 +274,21 @@ body.dark{
 	background-image: none;
 }
 
+
+// 404
+.error404{
+	.page-content{
+		text-align: center;
+	}
+	.card{
+    text-align: left;
+    margin-top: 3em;
+	}
+
+	#link-msg, #link-404{
+		display: none;
+	}
+}
 
 
 

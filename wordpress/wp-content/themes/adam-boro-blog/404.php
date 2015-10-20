@@ -18,36 +18,45 @@ get_header(); ?>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'adam-boro-blog' ); ?></p>
+					<p>It looks like nothing was found at this location. <span id="link-msg">But check this link out:</span></p>
 
-					<?php get_search_form(); ?>
+					<a id="link-404" href="" target="_blank" class="card notlink">
+						<h2> </h2>
+						<p class="excerpt"> </p>
+					</a>
 
-					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+					<script>
+						var link = document.getElementById('link-404');
+						var link_msg = document.getElementById('link-msg');
 
-					<?php if ( adam_boro_blog_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'adam-boro-blog' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-					<?php endif; ?>
+						var request = new XMLHttpRequest();
+						request.open('GET', 'http://adamboro.com/links/wp-json/posts', true);
+						request.onload = function() {
+						  if (request.status >= 200 && request.status < 400) {
+						    // Success!
+						    var data = JSON.parse(request.responseText);
+						    console.log(data)
 
-					<?php
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'adam-boro-blog' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-					?>
+						    var item = data[Math.floor(Math.random()*data.length)];
+						    console.log(item)
 
-					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+							link.href = item.acf.link;
+							link.children[0].innerHTML = item.title;
+							link.children[1].innerHTML = item.excerpt;
+
+						    link.style.display = 'inline-block'
+						    link_msg.style.display = 'initial'
+
+						  } else {
+						    // We reached our target server, but it returned an error
+						  }
+						};
+						request.onerror = function() {
+						  // There was a connection error of some sort
+						};
+						request.send();
+
+					</script>
 
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
