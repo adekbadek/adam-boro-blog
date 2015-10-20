@@ -159,6 +159,10 @@ body.dark{
 			margin: 0 auto;
 			padding: 1em;
 
+			.single-content{
+				margin-bottom: 6em;
+			}
+
 			.single-content p:first-child{
 				font-size: 1.3em;
 			}
@@ -216,8 +220,11 @@ body.dark{
 	.posts-navigation{
 		margin-top: 130px;
 		font-size: 0.9em;
+    width: 100%;
+    text-align: center;
 
 		.card{
+			text-align: left;
 			min-height: 26em;
 		}
 	
