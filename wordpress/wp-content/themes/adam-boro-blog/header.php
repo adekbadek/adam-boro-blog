@@ -28,7 +28,7 @@
 			<p class="site-description">
 				This site is where I keep track of the stuff I learn as a side effect of coding. If it's too <span id="bright-click-section">bright</span> <span id="bright-click" class="span-link">click here</span>.
 				<br>
-				<br>
+				<br class="divider">
 				I also <a href="http://adamboro.com/links/" target="_blank">collect links</a> and am <a href="mailto:adam@adamboro.com&subject=I have work for you.">available for work</a>. Check out <a href="http://adamboro.com/" target="_blank">my portfolio</a>.
 			</p>
 		</div><!-- .site-branding -->

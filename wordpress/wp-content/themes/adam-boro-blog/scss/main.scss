@@ -31,6 +31,7 @@ a:not(.notlink), .span-link{
 
 body{
 	color: $black;
+	background-color: $white;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -46,7 +47,7 @@ body.dark{
 	}
 
 	.site-header{
-		border-left: 1px solid $white;
+		border-color: $white;
 	}
 	.card{
 		border: 1px solid $white;
@@ -80,6 +81,42 @@ body.dark{
 		font-size: 3em;
 	}
 
+	@media only screen and (max-width: 1343px) {
+		width: 35%;
+	}
+
+	@media only screen and (max-width: 1025px) {
+    height: auto;
+    width: 100%;
+    position: initial;
+    border-left: none !important;
+    border-bottom: 1px solid $black;
+
+    h1{
+    	margin-bottom: 10px;
+    }
+
+    .site-description{
+			margin: 0;
+    }
+    .search-form{
+    	margin-top: 20px !important;
+    }
+    .divider{
+    	display: none;
+    }
+    .categories-subtitle{
+    	margin: 1em 0 0 0 !important;
+    }
+    .categories{
+    	margin: 0 !important;
+    }
+	}
+
+	@media only screen and (max-width: 400px) {
+		padding: 1em;
+	}
+
 
 	.search-form{
 		margin-top: 30px;
@@ -89,6 +126,7 @@ body.dark{
 			outline: none;
 			border: 1px solid black;
 			padding-bottom: 2px;
+			margin-top: 15px;
 		}
 		.search-submit:hover, .search-submit:focus{
 			color: $color;
@@ -119,6 +157,13 @@ body.dark{
 	justify-content: center;
 	margin-top: 3em;
 
+	@media only screen and (max-width: 1343px) {
+		width: 65%;
+	}
+	@media only screen and (max-width: 1025px) {
+		width: 100%;
+	}
+
 	.card{
 		position: relative;
 		display: inline-block;
@@ -133,6 +178,20 @@ body.dark{
 		padding: 0 1.5em 1em 1.5em;
 		margin: 0 1.5em 3em 1.5em;
 		word-break: break-word;
+
+		@media only screen and (max-width: 1025px) {
+			width: 30%;
+			margin: 0 1em 2em 1em;
+		}
+		@media only screen and (max-width: 961px) {
+			width: 46%;
+		}
+		@media only screen and (max-width: 801px) {
+			width: 45%;
+		}
+		@media only screen and (max-width: 640px) {
+			width: 100%;
+		}
 
 		h2{
 			font-weight: 100;
@@ -186,6 +245,10 @@ body.dark{
 				margin-top: 0;
 				font-size: 4em;
 				margin-bottom: 23px;
+
+				@media only screen and (max-width: 801px) {
+					font-size: 3em;
+				}
 			}
 
 			code{
@@ -242,6 +305,10 @@ body.dark{
 			top: -4rem;
 			font-size: 3em;
 			color: $black;
+
+			@media only screen and (max-width: 650px) {
+				display: none;
+			}
 		}
 		.card:hover:before{
 			color: $color;
@@ -267,10 +334,18 @@ body.dark{
 		.card:first-child{
 		width: 39em;
 
+		@media only screen and (max-width: 1025px) {
+			width: 100%;
+		}
+
 		h2{
 			font-size: 3em;
 			margin-bottom: 27px;
 			margin-top: 21px;
+
+			@media only screen and (max-width: 570px) {
+				font-size: 2em;
+			}
 		}
 	}
 }
