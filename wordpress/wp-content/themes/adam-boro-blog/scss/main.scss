@@ -27,7 +27,13 @@ a:not(.notlink), .span-link{
 .smaller{
 	font-size: 0.8em;
 }
-
+code{
+    font-family: monospace;
+    font-size: 1.1em;
+    background: #e4e4e4;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
 
 body{
 	color: $black;
@@ -59,6 +65,9 @@ body.dark{
 	}
 	.search-submit{
 		border: 1px solid $white !important;
+	}
+	code{
+		background: #484848;
 	}
 }
 
@@ -224,6 +233,7 @@ body.dark{
 
 			.single-content p:first-child{
 				font-size: 1.3em;
+				margin-bottom: 1rem;
 			}
 
 			h2, h3, h4{
@@ -249,11 +259,6 @@ body.dark{
 				@media only screen and (max-width: 801px) {
 					font-size: 3em;
 				}
-			}
-
-			code{
-				margin: 1em 0;
-				display: inline-block;
 			}
 
 			.footnote a{
