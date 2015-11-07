@@ -28,3 +28,19 @@ if(window.localStorage['adamboro-blog-bright'] == 'dark'){
 }else{
 	toggle_bright(false)
 }
+
+// Flipper - arrow to hide header like a drawer
+var header = document.getElementById('masthead')
+var header_w = header.getBoundingClientRect().width
+var flipper = document.getElementById('flipper-arrow')
+var flipper_w = flipper.getBoundingClientRect().width
+
+flipper.onclick = function() {
+  if (flipper.children[0].classList.contains('flip')) {
+    flipper.children[0].classList.remove('flip')
+    document.body.classList.add('fullwidth')
+  } else {
+    flipper.children[0].classList.add('flip')
+    document.body.classList.remove('fullwidth')
+  }
+}
