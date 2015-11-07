@@ -30,17 +30,25 @@ if(window.localStorage['adamboro-blog-bright'] == 'dark'){
 }
 
 // Flipper - arrow to hide header like a drawer
-var header = document.getElementById('masthead')
-var header_w = header.getBoundingClientRect().width
 var flipper = document.getElementById('flipper-arrow')
-var flipper_w = flipper.getBoundingClientRect().width
 
 flipper.onclick = function() {
   if (flipper.children[0].classList.contains('flip')) {
+  	window.localStorage['adamboro-blog-flip'] = 'f'
     flipper.children[0].classList.remove('flip')
     document.body.classList.add('fullwidth')
   } else {
+  	window.localStorage['adamboro-blog-flip'] = 't'
     flipper.children[0].classList.add('flip')
     document.body.classList.remove('fullwidth')
   }
 }
+
+if(window.localStorage['adamboro-blog-flip'] == 't'){
+    flipper.children[0].classList.add('flip')
+    document.body.classList.remove('fullwidth')
+}else{
+    flipper.children[0].classList.remove('flip')
+    document.body.classList.add('fullwidth')
+}
+
