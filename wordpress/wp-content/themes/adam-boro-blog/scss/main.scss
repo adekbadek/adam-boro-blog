@@ -17,7 +17,7 @@ $how_far: 20em;
 }
 
 a:not(.notlink), .span-link{
-	@include link($color, $color, #fff);
+	@include link($color, $black, #fff);
 }
 .span-link:hover{
 	cursor: pointer;
