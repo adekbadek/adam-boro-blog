@@ -5,6 +5,7 @@
   display: inline-block;
   padding: $w/1.5;
   transition: all $how_fast ease-in-out;
+  -webkit-transition: all $how_fast ease-in-out;
 
   .flip-cont{
     text-align: center;
@@ -12,8 +13,11 @@
     height: $w;
     // background: rgba(red, .4);
     padding-top: $w;
-    transform: rotate(45deg);
+    transform: rotate(45deg); 
+    -ms-transform: rotate(45deg); 
+    -webkit-transform: rotate(45deg); 
     transition: all $how_fast ease-in-out;
+    -webkit-transition: all $how_fast ease-in-out;
 
     .line{
       position: absolute;
@@ -22,6 +26,7 @@
       width: $w;
       height: $w;
       transition: all $how_fast ease-in-out;
+      -webkit-transition: all $how_fast ease-in-out;
       /* background: rgba(#231243, .1); */
 
       &.bottom{  border-bottom: $line_w solid $black;  }
@@ -31,7 +36,11 @@
         top: $w -($w * $sq_root_of_2) - $line_w/$sq_root_of_2;
         border-left: $line_w solid $black;
         transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
         transform-origin: 0% 100%;
+        -ms-transform-origin: 0% 100%;
+        -webkit-transform-origin: 0% 100%;
         /* background: rgba(red, .2); */
       }
     }
@@ -42,11 +51,17 @@
 }
 .flip-cont.flip{
   transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 
   .line.bottom{
     transform: rotate(-90deg) translateX($line_w) translateY($line_w);
+    -ms-transform: rotate(-90deg) translateX($line_w) translateY($line_w);
+    -webkit-transform: rotate(-90deg) translateX($line_w) translateY($line_w);
   }
   .line.left{
     transform: rotate(90deg) translateX(-$line_w) translateY(-$line_w);
+    -ms-transform: rotate(90deg) translateX(-$line_w) translateY(-$line_w);
+    -webkit-transform: rotate(90deg) translateX(-$line_w) translateY(-$line_w);
   }
 }
