@@ -44,11 +44,16 @@ flipper.onclick = function() {
   }
 }
 
-if(window.localStorage['adamboro-blog-flip'] == 't'){
-    flipper.children[0].classList.add('flip')
-    document.body.classList.remove('fullwidth')
+if (window.innerWidth >= 1025) {
+	if(window.localStorage['adamboro-blog-flip'] == 't'){
+		flipper.children[0].classList.add('flip')
+		document.body.classList.remove('fullwidth')
+	}else{
+		flipper.children[0].classList.remove('flip')
+		document.body.classList.add('fullwidth')
+	}
 }else{
-    flipper.children[0].classList.remove('flip')
-    document.body.classList.add('fullwidth')
+	flipper.children[0].classList.add('flip')
+	document.body.classList.remove('fullwidth')
 }
 
