@@ -50,38 +50,38 @@ body{
 	font-family: 'Open Sans', sans-serif;
 }
 
-body.dark{
-	color: $white;
-	background-color: $bg_black;
-
-	a:not(.notlink), .span-link{
-		@include link($color, $color, $bg_black);
-	}
-	.notlink, .notlink:focus, .notlink:visited{
-	  color: $white;
-	}
-	.gist-meta a{
-		@include reset_link();
-	}
-
-	.site-header{
-		border-color: $white;
-	}
-	.card{
-		border: 1px solid $white;
-		color: $white;
-	}
-
-	.posts-navigation .card:before{
-		color: $white;
-	}
-	.search-submit{
-		border: 1px solid $white !important;
-	}
-	code{
-		background: #484848;
-	}
-}
+// body.dark{
+// 	color: $white;
+// 	background-color: $bg_black;
+//
+// 	a:not(.notlink), .span-link{
+// 		@include link($color, $color, $bg_black);
+// 	}
+// 	.notlink, .notlink:focus, .notlink:visited{
+// 	  color: $white;
+// 	}
+// 	.gist-meta a{
+// 		@include reset_link();
+// 	}
+//
+// 	.site-header{
+// 		border-color: $white;
+// 	}
+// 	.card{
+// 		border: 1px solid $white;
+// 		color: $white;
+// 	}
+//
+// 	.posts-navigation .card:before{
+// 		color: $white;
+// 	}
+// 	.search-submit{
+// 		border: 1px solid $white !important;
+// 	}
+// 	code{
+// 		background: #484848;
+// 	}
+// }
 
 @media only screen and (min-width: 1025px) {
 

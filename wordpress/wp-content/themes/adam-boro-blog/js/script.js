@@ -1,34 +1,32 @@
-var bright_click = document.getElementById('bright-click');
-var bright_click_section = document.getElementById('bright-click-section');
+// var bright_click = document.getElementById('bright-click');
+// var bright_click_section = document.getElementById('bright-click-section');
 
-function toggle_bright(bright){
+// function toggle_bright(bright){
 
-	// TODO: set cookies, not localStorage
-
-	if(bright){
-		document.body.classList.remove('bright');
-		document.body.classList.add('dark');
-		bright_click_section.innerHTML = 'dark'
-		// window.localStorage['adamboro-blog-bright'] = 'dark'
-		document.cookie="bright_class=dark";
-		console.log('change to dark');
-	}else{
-		document.body.classList.remove('dark');
-		document.body.classList.add('bright');
-		bright_click_section.innerHTML = 'bright'
-		// window.localStorage['adamboro-blog-bright'] = 'bright'
-		document.cookie="bright_class=bright";
-		console.log('change to bright');
-	}
-}
-
-bright_click.onclick = function(){
-	if(document.body.classList.contains('dark')){
-		toggle_bright(false)
-	}else{
-		toggle_bright(true)
-	}
-}
+// 	if(bright){
+// 		document.body.classList.remove('bright');
+// 		document.body.classList.add('dark');
+// 		bright_click_section.innerHTML = 'dark'
+// 		// window.localStorage['adamboro-blog-bright'] = 'dark'
+// 		document.cookie="bright_class=dark";
+// 		console.log('change to dark');
+// 	}else{
+// 		document.body.classList.remove('dark');
+// 		document.body.classList.add('bright');
+// 		bright_click_section.innerHTML = 'bright'
+// 		// window.localStorage['adamboro-blog-bright'] = 'bright'
+// 		document.cookie="bright_class=bright";
+// 		console.log('change to bright');
+// 	}
+// }
+//
+// bright_click.onclick = function(){
+// 	if(document.body.classList.contains('dark')){
+// 		toggle_bright(false)
+// 	}else{
+// 		toggle_bright(true)
+// 	}
+// }
 
 // if(window.localStorage['adamboro-blog-bright'] == 'dark'){
 // 	toggle_bright(true)
@@ -40,8 +38,6 @@ bright_click.onclick = function(){
 var flipper = document.getElementById('flipper-arrow')
 
 flipper.onclick = function() {
-
-	// TODO: set cookies, not localStorage
 
 	// class flip does not change anything, it acts as a data attr
   if (flipper.children[0].classList.contains('flip')) {
@@ -56,18 +52,3 @@ flipper.onclick = function() {
     document.body.classList.remove('fullwidth')
   }
 }
-
-// DO ALL THAT IN PHP
-//
-// if (window.innerWidth >= 1025) {
-// 	if(window.localStorage['adamboro-blog-flip'] == 't'){
-// 		flipper.children[0].classList.add('flip')
-// 		document.body.classList.remove('fullwidth')
-// 	}else{
-// 		flipper.children[0].classList.remove('flip')
-// 		document.body.classList.add('fullwidth')
-// 	}
-// }else{
-// 	flipper.children[0].classList.add('flip')
-// 	document.body.classList.remove('fullwidth')
-// }

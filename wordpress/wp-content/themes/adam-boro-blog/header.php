@@ -25,13 +25,13 @@
 	// BRIGHTNESS (BRIGHT OR DARK)
 	// bright by default:
 	// read cookie
-	if (isset($_COOKIE['bright_class'])) {
-		$body_bright_class = $_COOKIE['bright_class'];
-	}else{
-		// set default cookie val
-		$body_bright_class = 'bright';
-		// setcookie('bright_class', $body_bright_class, strtotime('+10 year'));
-	};
+	// if (isset($_COOKIE['bright_class'])) {
+	// 	$body_bright_class = $_COOKIE['bright_class'];
+	// }else{
+	// 	// set default cookie val
+	// 	$body_bright_class = 'bright';
+	// 	// setcookie('bright_class', $body_bright_class, strtotime('+10 year'));
+	// };
 	//
 	// WIDTH (HEADER HIDDEN OR SHOWN)
 	// menu shown by default ('' or 'flip'):
@@ -47,7 +47,7 @@
 	// echo 'width class: ' . $body_width_class . '<br>';
 	// echo 'bright class: ' . $body_bright_class;
 ?>
-<body <?php body_class( [$body_bright_class, $body_width_class] ); ?>>
+<body <?php body_class( $body_width_class ); ?>>
 
 <div id="page" class="hfeed site">
 
