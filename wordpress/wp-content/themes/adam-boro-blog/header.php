@@ -19,7 +19,35 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php
+	// READ COOKIES AND ASSIGN BODY CLASSES
+	//
+	// BRIGHTNESS (BRIGHT OR DARK)
+	// bright by default:
+	// read cookie
+	if (isset($_COOKIE['bright_class'])) {
+		$body_bright_class = $_COOKIE['bright_class'];
+	}else{
+		// set default cookie val
+		$body_bright_class = 'bright';
+		// setcookie('bright_class', $body_bright_class, strtotime('+10 year'));
+	};
+	//
+	// WIDTH (HEADER HIDDEN OR SHOWN)
+	// menu shown by default ('' or 'flip'):
+	// read cookie
+	if (isset($_COOKIE['width_class'])) {
+		$body_width_class = $_COOKIE['width_class'];
+	}else{
+		// set default cookie val
+		$body_width_class = 'with_menu';
+		// setcookie('width_class', $body_width_class, strtotime('+10 year'));
+	};
+
+	// echo 'width class: ' . $body_width_class . '<br>';
+	// echo 'bright class: ' . $body_bright_class;
+?>
+<body <?php body_class( [$body_bright_class, $body_width_class] ); ?>>
 
 <div id="page" class="hfeed site">
 
@@ -52,8 +80,8 @@
 
 		<div class="categories-subtitle dimmed">Categories:</div>
 		<div class="categories">
-		<?php 
-			$categories = get_categories(); 
+		<?php
+			$categories = get_categories();
 			foreach ($categories as $category) {
 				echo '<a class="notlink" href="' . home_url( '/' ) . $category->slug . '">' . $category->cat_name . '</a><br>';
 			}
