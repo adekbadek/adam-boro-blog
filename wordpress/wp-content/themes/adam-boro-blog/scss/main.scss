@@ -60,6 +60,9 @@ body.dark{
 	.notlink, .notlink:focus, .notlink:visited{
 	  color: $white;
 	}
+	.gist-meta a{
+		@include reset_link();
+	}
 
 	.site-header{
 		border-color: $white;

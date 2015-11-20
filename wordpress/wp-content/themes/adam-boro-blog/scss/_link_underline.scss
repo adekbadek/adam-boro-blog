@@ -16,3 +16,9 @@ $link-offset: 0px;
 		background-image: linear-gradient(to top, transparent, transparent $offset, $active $offset, $active ($offset + $width), transparent ($offset + $width));
 	}
 }
+
+@mixin reset_link(){
+	color: inherit !important;
+	text-shadow: none !important;
+	background: none !important;
+}
