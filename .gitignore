@@ -7,6 +7,7 @@ _arch/
 *.mp3
 *.pdf
 *.sketch
+.DS_Store
 .sass-cache/
 
 adam-boro-blog alias
@@ -17,3 +18,7 @@ wordpress/wp-content/*
 !wordpress/wp-content/themes/
 wordpress/wp-content/themes/*
 !wordpress/wp-content/themes/adam-boro-blog/
+
+wordpress/wp-content/themes/adam-boro-blog/.sass-cache
+wordpress/wp-content/themes/adam-boro-blog/**/.DS_Store
+wordpress/wp-content/themes/adam-boro-blog/.DS_Store

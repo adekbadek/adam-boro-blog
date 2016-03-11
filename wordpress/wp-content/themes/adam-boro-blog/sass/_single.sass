@@ -1,0 +1,65 @@
+.single-wrapper
+  width: 100%
+  .single
+    max-width: 40em
+    margin: 0 auto
+    padding: 1em
+    .single-content
+      margin-bottom: 6em
+    .single-content p:first-child
+      font-size: 1.3em
+      margin-bottom: 1rem
+    h2, h3, h4
+      font-weight: 100
+    h3
+      text-transform: uppercase
+    .single-data p
+      margin: 0
+    .single-data
+      margin-bottom: 3em
+    h2, h3, h4
+      font-weight: 100
+    > h2
+      margin-top: 0
+      font-size: 4em
+      margin-bottom: 23px
+      @media only screen and (max-width: 801px)
+        font-size: 3em
+    .footnote a
+      background-image: none
+      text-shadow: none
+    .footnotes
+      opacity: 0.7
+      .footnotereverse
+        a
+          background-image: none
+          text-shadow: none
+        a:before
+          content: '↩'
+        img
+          display: none !important
+// cards representing next/previous posts on the bottom of a single post
+.posts-navigation
+  margin-top: 130px
+  font-size: 0.9em
+  width: 100%
+  text-align: center
+  .card
+    text-align: left
+    min-height: 26em
+  .card-next:before
+    content: '←'
+  .card-prev:before
+    content: '→'
+  .card:before
+    text-align: center
+    width: 100%
+    position: absolute
+    left: 0
+    top: -4rem
+    font-size: 3em
+    color: $black
+    @media only screen and (max-width: 650px)
+      display: none
+  .card:hover:before
+    color: $color
