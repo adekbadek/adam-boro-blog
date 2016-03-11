@@ -22,3 +22,5 @@ wordpress/wp-content/themes/*
 wordpress/wp-content/themes/adam-boro-blog/.sass-cache
 wordpress/wp-content/themes/adam-boro-blog/**/.DS_Store
 wordpress/wp-content/themes/adam-boro-blog/.DS_Store
+wordpress/wp-content/themes/adam-boro-blog/style.css
+wordpress/wp-content/themes/adam-boro-blog/style.css.map

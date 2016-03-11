@@ -18,9 +18,9 @@ get_header(); ?>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p>It looks like nothing was found at this location. <span id="link-msg">But check this link out:</span></p>
+					<p>It looks like nothing was found at this location. <span id="link-msg">But check this <a href="http://adamboro.com/links/">link</a> out:</span></p>
 
-					<a id="link-404" href="" target="_blank" class="card notlink">
+					<a id="link-404" href="" target="_blank" class="card">
 						<h2> </h2>
 						<p class="excerpt"> </p>
 					</a>
@@ -30,7 +30,7 @@ get_header(); ?>
 						var link_msg = document.getElementById('link-msg');
 
 						var request = new XMLHttpRequest();
-						request.open('GET', 'http://adamboro.com/links/wp-json/posts', true);
+						request.open('GET', 'http://adamboro.com/links/wp-json/wp/v2/posts/', true);
 						request.onload = function() {
 						  if (request.status >= 200 && request.status < 400) {
 						    // Success!
@@ -40,9 +40,9 @@ get_header(); ?>
 						    var item = data[Math.floor(Math.random()*data.length)];
 						    console.log(item)
 
-							link.href = item.acf.link;
-							link.children[0].innerHTML = item.title;
-							link.children[1].innerHTML = item.excerpt;
+								link.href = item.acf.link;
+								link.children[0].innerHTML = item.title.rendered;
+								link.children[1].innerHTML = item.excerpt.rendered;
 
 						    link.style.display = 'inline-block'
 						    link_msg.style.display = 'initial'

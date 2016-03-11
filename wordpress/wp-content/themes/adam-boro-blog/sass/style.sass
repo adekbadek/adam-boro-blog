@@ -8,6 +8,7 @@
 
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600)
+@import url(https://fonts.googleapis.com/css?family=Libre+Baskerville)
 
 @import _normalize
 @import _link_underline
@@ -19,7 +20,7 @@
 
 *
   box-sizing: border-box
-
+  transition: color 200ms, border-color 200ms
 
 body
   color: $black
@@ -29,21 +30,17 @@ body
 
 
 // links
-a:not(.notlink), .span-link
+a:not(.card), .span-link
   +link($color, $black, white)
 
 .span-link:hover
   cursor: pointer
 
-.notlink, .notlink:focus, .notlink:visited
-  text-decoration: none
-  color: $black
-
-.notlink:hover
-  color: $color !important
-
 
 // Text
+h1, h2, h3, h4, .serif
+  font-family: 'Libre Baskerville', serif
+
 .dimmed
   opacity: 0.5
 
@@ -52,11 +49,10 @@ a:not(.notlink), .span-link
 
 code
   font-family: monospace
-  font-size: 1.1em
+  font-size: 0.95em
   background: #e4e4e4
   padding: 2px 5px
   border-radius: 5px
-
 
 
 
@@ -75,18 +71,19 @@ code
 .card
   position: relative
   display: inline-block
+  text-decoration: none
+  color: $black
   vertical-align: top
   width: 18em
-  color: $black
-  border: 1px solid transparent
   text-decoration: none
-  border: 1px solid $black
-  padding: 0 1.5em 1em 1.5em
+  border-top: $border_w solid $black
   margin: 0 1.5em 3em 1.5em
   word-break: break-word
   @media only screen and (max-width: $menu_to_top_breakpoint)
     width: 30%
     margin: 0 1em 2em 1em
+    padding-left: 1em
+    padding-right: 1em
   @media only screen and (max-width: 961px)
     width: 46%
   @media only screen and (max-width: 801px)
@@ -101,8 +98,13 @@ code
   .time
     margin-top: 0
   &:hover
-    color: $color
     border-color: $color
+    h2
+      color: $color
+
+  .excerpt
+    font-size: .96em
+
 
 
 // bigger first card - only on homepage
