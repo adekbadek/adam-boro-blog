@@ -51,15 +51,34 @@
   .search-submit:hover, .search-submit:focus
     color: $color
     border-color: $color
+
+  label
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      bottom: -3px
+      left: 0
+      width: 90%
+      height: 120%
+      border: 1px solid #ddd
   .search-field
-    border: 1px solid #ddd
-    padding: 2px
+    border: none
+    padding: 3px 3px 3px 7px
   .search-field:hover, .search-field:focus
     outline: none
-    border-color: $color
+
 
 
 .categories-subtitle
   margin: 2em 0 0 0
 .categories
   margin: .5em 0 1em 0
+
+  @media only screen and (max-width: 500px)
+
+    br
+      display: none
+    a
+      display: inline-block
+      margin-right: 1em
