@@ -47,7 +47,7 @@
 		<?php
 			$categories = get_categories();
 			foreach ($categories as $category) {
-				echo '<a href="' . home_url( '/' ) . $category->slug . '">' . $category->cat_name . '</a><br>';
+				echo '<a href="' . home_url( '/' ) . $category->slug . '">' . $category->cat_name . '</a>';
 			}
 		?>
 		</div>
