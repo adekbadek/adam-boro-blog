@@ -42,8 +42,54 @@ figcaption
   font-size: 0.8em
   margin-top: 5px
 
+
+// GH gist
 .gist-file
-  margin-top: 40px
+  margin: 0
+  transition: all 200ms
+
+.gist
+  margin-top: 40px !important
+  margin-bottom: 2em !important
+
+  &.g-hidden
+    height: 200px !important
+    cursor: pointer
+
+    &::after
+      content: ''
+      position: absolute
+      width: 100%
+      height: 160px
+      bottom: 0
+      left: 0
+      background: linear-gradient(transparent 40%, #fff 100%)
+
+    &::before
+      position: absolute
+      // content: '☟'
+      content: '\261F'
+      text-align: center
+      width: 100%
+      bottom: 18px
+      z-index: 1
+      font-size: 70px
+      opacity: 0
+      transition: all 150ms
+
+    &:hover
+      .gist-file
+        opacity: .5
+      &::before
+        opacity: 1
+
+
+  &.g-expandable
+    position: relative
+    overflow: hidden
+    transition: all 400ms ease-out
+
+
 
 // links
 a:not(.card), .span-link
