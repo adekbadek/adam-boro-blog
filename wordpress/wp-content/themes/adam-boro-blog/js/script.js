@@ -7,3 +7,5 @@ for (var i = 0; i < gists.length; i++) {
     e.target.classList.remove('g-hidden')
   }
 }
+
+hljs.initHighlightingOnLoad();
