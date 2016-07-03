@@ -9,3 +9,9 @@ for (var i = 0; i < gists.length; i++) {
 }
 
 hljs.initHighlightingOnLoad();
+
+// all external links should open in new tab
+Array.prototype.slice.call(document.querySelectorAll('a')).map(function(link){
+  if(link.href.indexOf('http') >= 0)
+    link.target = '_blank'
+})
